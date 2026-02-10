@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 16:24:23 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/10 16:31:12 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/10 17:11:20 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ int main()
 	// trap.beRepaired(3);
 	// trap.beRepaired(10);
 
-	// std::cout << "\n--- Energy points exhaustion test ---" << std::endl;
-	// for (int i = 0; i < 10; i++)
-	// 	clap.attack("target");
-	// clap.attack("target"); // Should fail if energy is 10 and each attack costs 1
+	std::cout << "\n--- Energy points exhaustion test ---" << std::endl;
+	for (int i = 0; i < 10; i++)
+		clap.attack("target");
+	clap.attack("target"); // Should fail if energy is 10 and each attack costs 1
 	// clap.beRepaired(1);    // Should fail
 
 	// std::cout << "\n--- Hit points exhaustion test ---" << std::endl;

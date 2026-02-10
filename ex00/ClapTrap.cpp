@@ -6,13 +6,15 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:10:37 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/10 16:31:12 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/10 17:14:22 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 typedef ClapTrap CT;
+
+/**************OCF functions**************************/
 
 CT::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10),
 _attack_damage(0)
@@ -43,6 +45,32 @@ CT::~ClapTrap()
 {
     std::cout << "Destructor called" << std::endl;
 }
+
+/**************Game functions**************************/
+/*
+When ClapTrap attacks, it causes its target to lose <attack damage> hit points.
+Attacking cost 1 energy point. Of course, ClapTrap can’t do anything if it has
+no hit points or energy points left.
+*/
+void CT::attack(const std::string &target)
+{
+	if (this->_hit_points == 0 || this->_energy_points == 0)
+		std::cout << "No hit points or energy points left! You can't attack my friend" << std::endl;
+	else
+	{
+		this->_energy_points--;
+		std::cout << this->getName() << " attacks " << target << " !" << std::endl;
+		std::cout << target << " looses " << this->getAttackDamage() << " hit points." << std::endl;
+		if (this->getAttackDamage() <= 2)
+			std::cout << "Ce n'est pas très efficace..." << std::endl;
+		if (this->getAttackDamage() > 10)
+			std::cout << "C'est super efficace!" << std::endl;
+		std::cout << this->getName() << " has " << this->getEnergyPoints() << " energy points left.\n" << std::endl;
+	}
+}
+
+
+/**************Getters and Setters**************************/
 
 std::string CT::getName(void) const
 {
