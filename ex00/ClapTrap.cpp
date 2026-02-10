@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:10:37 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/10 17:14:22 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/10 17:23:45 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ no hit points or energy points left.
 */
 void CT::attack(const std::string &target)
 {
-	if (this->_hit_points == 0 || this->_energy_points == 0)
+	if (this->_hit_points <= 0 || this->_energy_points <= 0)
 		std::cout << "No hit points or energy points left! You can't attack my friend" << std::endl;
 	else
 	{
@@ -68,6 +68,18 @@ void CT::attack(const std::string &target)
 		std::cout << this->getName() << " has " << this->getEnergyPoints() << " energy points left.\n" << std::endl;
 	}
 }
+
+void CT::takeDamage(unsigned int amount)
+{
+	if (this->getHitPoints() <= 0)
+		std::cout << this->getName() << " is already dead, let him rest in peace!\n" << std::endl;
+	else
+	{
+		std::cout << this->getName() << " is under attack ! It looses " << amount << " hit points.\n" << std::endl;
+		this->_hit_points -= amount;
+	}
+}
+
 
 
 /**************Getters and Setters**************************/
