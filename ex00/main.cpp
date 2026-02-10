@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 16:24:23 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/10 17:26:11 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/10 17:53:49 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,19 @@ int main()
 	clap.attack("Trappy");
 	trap.takeDamage(5);
 
-	// trap.beRepaired(3);
-	// trap.beRepaired(10);
+	trap.beRepaired(3);
+	trap.beRepaired(10);
 
 	std::cout << "\n--- Energy points exhaustion test ---" << std::endl;
 	for (int i = 0; i < 8; i++)
 		clap.attack("target");
 	clap.attack("target"); // Should fail if energy is 10 and each attack costs 1
-	// clap.beRepaired(1);    // Should fail
+	clap.beRepaired(1);    // Should fail
 
 	std::cout << "\n--- Hit points exhaustion test ---" << std::endl;
 	trap.takeDamage(20);
 	trap.attack("Clappy"); // Should fail if HP <= 0
-	// trap.beRepaired(5);    // Should fail
+	trap.beRepaired(5);    // Should fail
 
 	std::cout << "\n--- Copy & Assignment tests ---" << std::endl;
 	ClapTrap copy(clap);

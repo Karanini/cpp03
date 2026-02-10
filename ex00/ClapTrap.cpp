@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:10:37 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/10 17:28:31 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/10 17:57:00 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,9 @@ void CT::takeDamage(unsigned int amount)
 		std::cout << this->getName() << " is already dead, let him rest in peace!\n" << std::endl;
 	else
 	{
-		std::cout << this->getName() << " is under attack ! It looses " << amount << " hit points.\n" << std::endl;
 		this->_hit_points -= amount;
+		std::cout << this->getName() << " is under attack ! It looses " << amount << " hit points." << std::endl;
+		std::cout << this->getName() << " has now " << this->getHitPoints() << " hit points.\n" << std::endl;
 	}
 }
 
@@ -88,7 +89,14 @@ energy points left.
 
 void CT::beRepaired(unsigned int amount)
 {
-
+	if (this->_hit_points <= 0 || this->_energy_points <= 0)
+		std::cout << "No hit points or energy points left! You can't be repaired my friend" << std::endl;
+	else
+	{
+		this->_hit_points += amount;
+		std::cout << "A professional ClapTrap fixer repairs " << this->getName() << ", which gains back " << amount << " hit points." << std::endl;
+		std::cout << this->getName() << " has now " << this->getHitPoints() << " hit points.\n" << std::endl;
+	}
 }
 
 
