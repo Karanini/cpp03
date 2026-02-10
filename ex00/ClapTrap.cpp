@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:10:37 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/10 17:23:45 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/10 17:28:31 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,17 @@ void CT::takeDamage(unsigned int amount)
 		std::cout << this->getName() << " is under attack ! It looses " << amount << " hit points.\n" << std::endl;
 		this->_hit_points -= amount;
 	}
+}
+
+/*
+When ClapTrap repairs itself, it regains <amount> hit points. Attacking and repairing
+each cost 1 energy point. Of course, ClapTrap can’t do anything if it has no hit points or
+energy points left.
+*/
+
+void CT::beRepaired(unsigned int amount)
+{
+
 }
 
 
