@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 15:02:40 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/11 17:41:32 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/11 17:53:25 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,18 @@ ST::ScavTrap(const ScavTrap &trap) : ClapTrap(trap)
 	std::cout << "ScavTrap copy constructor called" << std::endl;
 }
 
+/*
+*Technically possible not to implement this function, so that the
+* `ClapTrap::operator=()` function is called automatically with
+* `ScavTrap` objects by inheritance. But all the classes must have
+* OCF form to satisfy 42's subjects requirements.
+*/
 ScavTrap    &ST::operator=(const ScavTrap &trap)
 {
-
+	std::cout << "ScavTrap copy assignment operator called" << std::endl;
+    if (this != &trap)
+    {
+        this->ClapTrap::operator=(trap);
+    }
+    return (*this);
 }
