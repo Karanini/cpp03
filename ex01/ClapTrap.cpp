@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:10:37 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/10 17:58:45 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/11 15:12:12 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ typedef ClapTrap CT;
 
 /**************OCF functions**************************/
 
-CT::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10),
-_attack_damage(0)
+CT::ClapTrap(std::string name) : _name(name), _hit_points(100), _energy_points(50),
+_attack_damage(20)
 {
     std::cout << "Default constructor called" << std::endl;
 }
