@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:10:37 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/11 17:27:31 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/11 17:42:22 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ typedef ClapTrap CT;
 CT::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10),
 _attack_damage(0)
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
 CT::ClapTrap(const ClapTrap &trap)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "ClapTrap copy constructor called" << std::endl;
     *this = trap;
 }
 
 ClapTrap    &CT::operator=(const ClapTrap &trap)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "ClapTrap copy assignment operator called" << std::endl;
     if (this != &trap)
     {
         this->_name = trap._name;
@@ -43,7 +43,7 @@ ClapTrap    &CT::operator=(const ClapTrap &trap)
 
 CT::~ClapTrap()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "ClapTrap destructor called" << std::endl;
 }
 
 /**************Game functions**************************/
