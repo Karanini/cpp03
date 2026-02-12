@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 15:02:40 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/11 17:53:25 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/12 10:33:51 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,3 +55,20 @@ ScavTrap    &ST::operator=(const ScavTrap &trap)
     }
     return (*this);
 }
+
+ST::~ScavTrap()
+{
+    std::cout << "ScavTrap destructor called" << std::endl;
+}
+
+void ST::attack(const std::string& target)
+{
+	std::cout << "A savage ScavTrap attacks!" << std::endl;
+	this->ClapTrap::attack(target);
+}
+
+void ST::guardGate()
+{
+	std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
+}
+

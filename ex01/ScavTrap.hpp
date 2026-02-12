@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 18:04:30 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/11 17:40:37 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/12 10:33:03 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ public:
     ScavTrap(std::string name);
     ScavTrap(const ScavTrap &trap);
     ScavTrap    &operator=(const ScavTrap &trap);
-    // ~ScavTrap();
+    ~ScavTrap();
 
-    // void attack(const std::string& target);
-	// void guardGate();
+    void attack(const std::string& target);
+	void guardGate();
 };
 
 
