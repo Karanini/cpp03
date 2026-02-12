@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 18:04:30 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/12 10:43:51 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/12 14:27:16 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@
 #include <string>
 #include <iostream>
 
-class	FragTrap: public ClapTrap
+/*
+* ex03: add virtual keyword so that only one instance of the base class
+(ClapTrap) is created, even if it is inherited multiple times (by DiamondTrap)
+*/
+class	FragTrap: virtual public ClapTrap
 {
 public:
     FragTrap(std::string name);
