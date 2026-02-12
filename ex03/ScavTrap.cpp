@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 15:02:40 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/12 10:53:00 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/12 10:35:30 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-typedef FragTrap FT;
+typedef ScavTrap ST;
 
 /*
+ScavTrap will use the attributes of ClapTrap (update ClapTrap accordingly) and
+must initialize them to:
 • Name, which is passed as a parameter to the constructor
 • Hit points (100), representing the health of the ClapTrap
-• Energy points (100)
-• Attack damage (30)
+• Energy points (50)
+• Attack damage (20)
 */
-FT::FragTrap(std::string name) : ClapTrap(name)
+ST::ScavTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "FragTrap default constructor called." << std::endl;
+	std::cout << "ScavTrap default constructor called." << std::endl;
 	this->setHitPoints(100);
 	this->setEnergyPoints(50);
 	this->setAttackDamage(20);
@@ -33,20 +35,20 @@ FT::FragTrap(std::string name) : ClapTrap(name)
 * already initializes the member objects with the values stored in
 * `trap`
 */
-FT::FragTrap(const FragTrap &trap) : ClapTrap(trap)
+ST::ScavTrap(const ScavTrap &trap) : ClapTrap(trap)
 {
-	std::cout << "FragTrap copy constructor called" << std::endl;
+	std::cout << "ScavTrap copy constructor called" << std::endl;
 }
 
 /*
 *Technically possible not to implement this function, so that the
 * `ClapTrap::operator=()` function is called automatically with
-* `FragTrap` objects by inheritance. But all the classes must have
+* `ScavTrap` objects by inheritance. But all the classes must have
 * OCF form to satisfy 42's subjects requirements.
 */
-FragTrap    &FT::operator=(const FragTrap &trap)
+ScavTrap    &ST::operator=(const ScavTrap &trap)
 {
-	std::cout << "FragTrap copy assignment operator called" << std::endl;
+	std::cout << "ScavTrap copy assignment operator called" << std::endl;
     if (this != &trap)
     {
         this->ClapTrap::operator=(trap);
@@ -54,14 +56,19 @@ FragTrap    &FT::operator=(const FragTrap &trap)
     return (*this);
 }
 
-FT::~FragTrap()
+ST::~ScavTrap()
 {
-    std::cout << "FragTrap destructor called" << std::endl;
+    std::cout << "ScavTrap destructor called" << std::endl;
 }
 
-void FT::highFivesGuys(void)
+void ST::attack(const std::string& target)
 {
-	std::cout << "FragTrap requests a positive high-fives (wtf ?)" << std::endl;
+	std::cout << "A savage ScavTrap attacks!" << std::endl;
+	this->ClapTrap::attack(target);
 }
 
+void ST::guardGate()
+{
+	std::cout << "ScavTrap " << this->getName() << " is now in Gate keeper mode" << std::endl;
+}
 
