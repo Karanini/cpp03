@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 16:24:23 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/11 15:12:59 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/12 10:36:06 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@ int main()
 	std::cout << "unnamed    - Name: " << unnamed.getName() << ", HP: " << unnamed.getHitPoints() << ", EP: " << unnamed.getEnergyPoints() << ", AD: " << unnamed.getAttackDamage() << std::endl;
 	std::cout << "trap    - Name: " << trap.getName() << ", HP: " << trap.getHitPoints() << ", EP: " << trap.getEnergyPoints() << ", AD: " << trap.getAttackDamage() << std::endl;
 
-	// std::cout << "\n--- Action tests ---" << std::endl;
-	// scav.attack("Trappy");
-	// trap.takeDamage(0);
+	std::cout << "\n--- Action tests ---" << std::endl;
+	scav.attack("Trappy");
+	trap.takeDamage(0);
 
+	scav.guardGate();
 	// scav.attack("Trappy");
 	// trap.takeDamage(5);
 
