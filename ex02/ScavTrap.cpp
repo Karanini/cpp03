@@ -14,6 +14,11 @@
 
 typedef ScavTrap ST;
 
+ST::ScavTrap() : ClapTrap()
+{
+	std::cout << "ScavTrap default constructor called" << std::endl;
+}
+
 /*
 ScavTrap will use the attributes of ClapTrap (update ClapTrap accordingly) and
 must initialize them to:

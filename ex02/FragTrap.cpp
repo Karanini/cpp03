@@ -12,7 +12,12 @@
 
 #include "FragTrap.hpp"
 
-typedef FragTrap FT;
+typedef		FragTrap FT;
+
+FT::FragTrap() : ClapTrap()
+{
+	std::cout << "FragTrap default constructor called" << std::endl;
+}
 
 /*
 • Name, which is passed as a parameter to the constructor

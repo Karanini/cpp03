@@ -16,10 +16,15 @@ typedef ClapTrap CT;
 
 /**************OCF functions**************************/
 
+CT::ClapTrap() : _name("default"), _hit_points(0), _energy_points(0), _attack_damage(0)
+{
+	std::cout << "ClapTrap default constructor called" << std::endl;
+}
+
 CT::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10),
 _attack_damage(0)
 {
-    std::cout << "ClapTrap default constructor called" << std::endl;
+    std::cout << "ClapTrap subject constructor called" << std::endl;
 }
 
 CT::ClapTrap(const ClapTrap &trap)
