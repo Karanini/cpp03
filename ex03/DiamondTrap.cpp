@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 13:01:19 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/13 14:35:37 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/13 14:37:50 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,11 @@ DiamondTrap    &DT::operator=(const DiamondTrap &trap)
 DT::~DiamondTrap()
 {
     std::cout << "DiamondTrap destructor called" << std::endl;
+}
+
+void	DT::whoAmI()
+{
+	std::cout << "My DiamondTrap name is " << this->_name << ".\n";
+	std::cout << "My ClapTrap name is " << this->ClapTrap::_name << std::endl;
 }
 
