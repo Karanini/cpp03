@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 13:01:19 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/13 14:52:19 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/13 15:02:31 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ DT::DiamondTrap() : ClapTrap(), _name("default")
 	this->ClapTrap::_name += "_clap_name";
 }
 
-DT::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name")
+DT::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name)
 {
 	std::cout << "DiamondTrap subject constructor called" << std::endl;
 	this->_name = name;
