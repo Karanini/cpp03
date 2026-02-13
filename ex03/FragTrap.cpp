@@ -3,16 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
+/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 15:02:40 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/12 14:43:12 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/13 13:11:08 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
 typedef FragTrap FT;
+
+FT::FragTrap() : ClapTrap()
+{
+	std::cout << "FragTrap default constructor called" << std::endl;
+}
 
 /*
 • Name, which is passed as a parameter to the constructor
@@ -22,7 +27,7 @@ typedef FragTrap FT;
 */
 FT::FragTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "FragTrap default constructor called." << std::endl;
+	std::cout << "FragTrap subject constructor called." << std::endl;
 	this->_hit_points = 100;
 	this->_energy_points = 100;
 	this->_attack_damage = 30;

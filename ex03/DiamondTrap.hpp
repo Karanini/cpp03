@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 11:40:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/12 11:42:30 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/13 13:02:53 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ class DiamondTrap : public ScavTrap, public FragTrap
 {
 private:
 	std::string _name;
+public:
+	DiamondTrap();
+    DiamondTrap(std::string name);
+    DiamondTrap(const DiamondTrap &trap);
+    DiamondTrap    &operator=(const DiamondTrap &trap);
+    ~DiamondTrap();
 };
 
 

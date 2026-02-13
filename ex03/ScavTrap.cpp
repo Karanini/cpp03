@@ -3,16 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
+/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 15:02:40 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/12 14:41:38 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/13 13:12:25 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 typedef ScavTrap ST;
+
+ST::ScavTrap() : ClapTrap()
+{
+	std::cout << "ScavTrap default constructor called" << std::endl;
+}
 
 /*
 ScavTrap will use the attributes of ClapTrap (update ClapTrap accordingly) and
@@ -24,7 +29,7 @@ must initialize them to:
 */
 ST::ScavTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "ScavTrap default constructor called." << std::endl;
+	std::cout << "ScavTrap subject constructor called." << std::endl;
 	this->_hit_points = 100;
 	this->_energy_points = 50;
 	this->_attack_damage = 20;

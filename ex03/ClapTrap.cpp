@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:10:37 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/11 17:42:22 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/13 13:09:54 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,15 @@ typedef ClapTrap CT;
 
 /**************OCF functions**************************/
 
+CT::ClapTrap() : _name("default"), _hit_points(0), _energy_points(0), _attack_damage(0)
+{
+	std::cout << "ClapTrap default constructor called" << std::endl;
+}
+
 CT::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10),
 _attack_damage(0)
 {
-    std::cout << "ClapTrap default constructor called" << std::endl;
+    std::cout << "ClapTrap subject constructor called" << std::endl;
 }
 
 CT::ClapTrap(const ClapTrap &trap)
