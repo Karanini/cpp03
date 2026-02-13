@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 13:01:19 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/13 14:34:38 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/13 14:35:37 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,10 @@ DiamondTrap    &DT::operator=(const DiamondTrap &trap)
 		this->_name = trap._name;
     }
     return (*this);
+}
+
+DT::~DiamondTrap()
+{
+    std::cout << "DiamondTrap destructor called" << std::endl;
 }
 
