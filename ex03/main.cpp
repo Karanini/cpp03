@@ -6,55 +6,37 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 16:24:23 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/12 10:36:06 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/13 14:54:06 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
-	std::cout << "--- Construction tests ---" << std::endl;
-	ScavTrap scav("Scavvy");
-	ScavTrap trap("Trappy");
-	ScavTrap unnamed("");
+	std::cout << "--- CREATING DIAMONDTRAP ---" << std::endl;
+	DiamondTrap dt("Shiny");
 
-	std::cout << "scav    - Name: " << scav.getName() << ", HP: " << scav.getHitPoints() << ", EP: " << scav.getEnergyPoints() << ", AD: " << scav.getAttackDamage() << std::endl;
-	std::cout << "unnamed    - Name: " << unnamed.getName() << ", HP: " << unnamed.getHitPoints() << ", EP: " << unnamed.getEnergyPoints() << ", AD: " << unnamed.getAttackDamage() << std::endl;
-	std::cout << "trap    - Name: " << trap.getName() << ", HP: " << trap.getHitPoints() << ", EP: " << trap.getEnergyPoints() << ", AD: " << trap.getAttackDamage() << std::endl;
+	std::cout << "\n--- IDENTITY TEST ---" << std::endl;
+	dt.whoAmI();
 
-	std::cout << "\n--- Action tests ---" << std::endl;
-	scav.attack("Trappy");
-	trap.takeDamage(0);
+	std::cout << "\n--- ATTRIBUTES TEST ---" << std::endl;
+	std::cout << "ClapTrap Name: " << dt.getName() << " (Expected: Shiny_clap_name)" << std::endl;
+	std::cout << "Hit Points:    " << dt.getHitPoints() << " (Expected: 100)" << std::endl;
+	std::cout << "Energy Points: " << dt.getEnergyPoints() << " (Expected: 50)" << std::endl;
+	std::cout << "Attack Damage: " << dt.getAttackDamage() << " (Expected: 30)" << std::endl;
 
-	scav.guardGate();
-	// scav.attack("Trappy");
-	// trap.takeDamage(5);
+	std::cout << "\n--- ATTACK TEST (SHOULD BE SCAVTRAP ATTACK) ---" << std::endl;
+	dt.attack("an intruder");
 
-	// trap.beRepaired(3);
-	// trap.beRepaired(10);
+	std::cout << "\n--- INHERITED TRAITS TEST ---" << std::endl;
+	dt.guardGate();      // From ScavTrap
+	dt.highFivesGuys();  // From FragTrap
 
-	// std::cout << "\n--- Energy points exhaustion test ---" << std::endl;
-	// for (int i = 0; i < 8; i++)
-	// 	scav.attack("target");
-	// scav.attack("target"); // Should fail if energy is 10 and each attack costs 1
-	// scav.beRepaired(1);    // Should fail
+	std::cout << "\n--- BASIC CLAPTRAP ACTIONS ---" << std::endl;
+	dt.takeDamage(30);
+	dt.beRepaired(20);
 
-	// std::cout << "\n--- Hit points exhaustion test ---" << std::endl;
-	// trap.takeDamage(20);
-	// trap.attack("scavpy"); // Should fail if HP <= 0
-	// trap.beRepaired(5);    // Should fail
-
-	// std::cout << "\n--- Copy & Assignment tests ---" << std::endl;
-	// ScavTrap copy(scav);
-	// unnamed = trap;
-
-	// std::cout << "\n--- State of objects ---" << std::endl;
-	// std::cout << "scav    - Name: " << scav.getName() << ", HP: " << scav.getHitPoints() << ", EP: " << scav.getEnergyPoints() << ", AD: " << scav.getAttackDamage() << std::endl;
-	// std::cout << "copy    - Name: " << copy.getName() << ", HP: " << copy.getHitPoints() << ", EP: " << copy.getEnergyPoints() << ", AD: " << copy.getAttackDamage() << std::endl;
-	// std::cout << "trap    - Name: " << trap.getName() << ", HP: " << trap.getHitPoints() << ", EP: " << trap.getEnergyPoints() << ", AD: " << trap.getAttackDamage() << std::endl;
-	// std::cout << "unnamed - Name: " << unnamed.getName() << ", HP: " << unnamed.getHitPoints() << ", EP: " << unnamed.getEnergyPoints() << ", AD: " << unnamed.getAttackDamage() << std::endl;
-
-	// std::cout << "\n--- Destruction ---" << std::endl;
-	// return 0;
+	std::cout << "\n--- CLEANUP ---" << std::endl;
+	return 0;
 }

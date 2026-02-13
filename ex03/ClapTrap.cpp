@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:10:37 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/13 13:09:54 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/13 14:54:06 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void CT::beRepaired(unsigned int amount)
 
 std::string CT::getName(void) const
 {
-    return (_name);
+    return (this->_name);
 }
 
 void CT::setName(std::string name)
@@ -118,7 +118,7 @@ void CT::setName(std::string name)
 
 int CT::getHitPoints(void) const
 {
-    return (_hit_points);
+    return (this->_hit_points);
 }
 
 void CT::setHitPoints(int hitPoints)
@@ -128,7 +128,7 @@ void CT::setHitPoints(int hitPoints)
 
 int CT::getEnergyPoints(void) const
 {
-    return (_energy_points);
+    return (this->_energy_points);
 }
 
 void CT::setEnergyPoints(int energyPoints)
@@ -138,7 +138,7 @@ void CT::setEnergyPoints(int energyPoints)
 
 int CT::getAttackDamage(void) const
 {
-    return (_attack_damage);
+    return (this->_attack_damage);
 }
 
 void CT::setAttackDamage(int attackDamage)
