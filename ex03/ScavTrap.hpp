@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 18:04:30 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/13 13:12:03 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/13 16:11:05 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 */
 class	ScavTrap: virtual public ClapTrap
 {
+protected:
+    static const int _s_energy_points = 50;
 public:
 	ScavTrap();
     ScavTrap(std::string name);
