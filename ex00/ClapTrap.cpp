@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:10:37 by michel_32         #+#    #+#             */
-/*   Updated: 2026/03/10 16:41:22 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/03/10 16:52:34 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,11 @@ void CT::beRepaired(unsigned int amount)
 		std::cout << "No hit points or energy points left! You can't be repaired my friend" << std::endl;
 	else
 	{
-		this->_hit_points += amount;
+		// Check for overflow before adding
+		if (amount > std::numeric_limits<unsigned int>::max() - this->_hit_points)
+			this->_hit_points = std::numeric_limits<unsigned int>::max();
+		else
+        	this->_hit_points += amount;
 		this->_energy_points--;
 		std::cout << "A professional ClapTrap fixer repairs " << this->getName() << ", which gains back " << amount << " hit points." << std::endl;
 		std::cout << this->getName() << " has now " << this->getHitPoints() << " hit points." << std::endl;
