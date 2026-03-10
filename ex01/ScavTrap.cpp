@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 15:02:40 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/03/10 17:39:47 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/03/10 17:56:21 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,13 @@ ST::~ScavTrap()
 
 void ST::attack(const std::string& target)
 {
-	std::cout << "A savage ScavTrap attacks!" << std::endl;
-	this->ClapTrap::attack(target);
+	if (this->_hit_points == 0 || this->_energy_points == 0)
+		std::cout << "No hit points or energy points left! You can't attack my friend" << std::endl;
+	else
+	{
+		std::cout << "A savage ScavTrap attacks!" << std::endl;
+		this->ClapTrap::attack(target);
+	}
 }
 
 void ST::guardGate()
