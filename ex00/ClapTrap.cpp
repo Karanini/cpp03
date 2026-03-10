@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:10:37 by michel_32         #+#    #+#             */
-/*   Updated: 2026/03/10 17:45:48 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/03/10 17:46:38 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void CT::takeDamage(unsigned int amount)
 	{
 		if (amount == 0)
 		{
-			std::cout << "ClapTrap " << this->getName() << " takes no damage!" << std::endl;
+			std::cout << this->getName() << " takes no damage!" << std::endl;
 			return;
 		}
 		if (amount >= this->getHitPoints())
