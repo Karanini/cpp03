@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 15:02:40 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/12 10:35:30 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/10 17:39:47 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@ typedef ScavTrap ST;
 
 ST::ScavTrap() : ClapTrap()
 {
+	this->_hit_points = 100;
+	this->_energy_points = 50;
+	this->_attack_damage = 20;
 	std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
@@ -29,10 +32,10 @@ must initialize them to:
 */
 ST::ScavTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "ScavTrap default constructor called." << std::endl;
-	this->setHitPoints(100);
-	this->setEnergyPoints(50);
-	this->setAttackDamage(20);
+	this->_hit_points = 100;
+	this->_energy_points = 50;
+	this->_attack_damage = 20;
+	std::cout << "ScavTrap " << this->_name << " constructed" << std::endl;
 }
 
 /*

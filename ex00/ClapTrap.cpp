@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:10:37 by michel_32         #+#    #+#             */
-/*   Updated: 2026/03/10 16:52:34 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/03/10 17:45:48 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ _attack_damage(0)
 
 CT::ClapTrap(const ClapTrap &trap)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "ClapTrap Copy constructor called" << std::endl;
     *this = trap;
 }
 
 ClapTrap    &CT::operator=(const ClapTrap &trap)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "ClapTrap Copy assignment operator called" << std::endl;
     if (this != &trap)
     {
         this->_name = trap._name;
@@ -48,7 +48,7 @@ ClapTrap    &CT::operator=(const ClapTrap &trap)
 
 CT::~ClapTrap()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "ClapTrap Destructor called" << std::endl;
 }
 
 /**************Game functions**************************/
