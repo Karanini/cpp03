@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:10:37 by michel_32         #+#    #+#             */
-/*   Updated: 2026/03/10 14:46:14 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/03/10 16:34:52 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,11 @@ void CT::takeDamage(unsigned int amount)
 		std::cout << this->_name << " is already dead, let him rest in peace!\n" << std::endl;
 	else
 	{
+		if (amount == 0)
+		{
+			std::cout << "ClapTrap " << this->_name << " takes no damage!" << std::endl;
+			return;
+		}
 		if (amount >= this->_hit_points)
 		{
 			std::cout << this->getName() << " is under attack ! It looses " << this->_hit_points << " hit points." << std::endl;
