@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+         #
+#    By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/16 14:08:56 by bkaras-g          #+#    #+#              #
-#    Updated: 2026/02/10 18:04:09 by bkaras-g         ###   ########.fr        #
+#    Updated: 2026/03/10 17:07:28 by michel_32        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,11 @@
 
 NAME = scavy_trappy.exe
 
-SRC = ClapTrap.cpp \
+SRC = ../ex00/ClapTrap.cpp \
 		ScavTrap.cpp \
 		main.cpp
 
-HEADERS = ClapTrap.hpp \
+HEADERS = ../ex00/ClapTrap.hpp \
 			ScavTrap.hpp
 
 RM = rm -f
