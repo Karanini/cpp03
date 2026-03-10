@@ -40,6 +40,11 @@ int main()
 	trap.attack("Clappy"); // Should fail if HP <= 0
 	trap.beRepaired(5);    // Should fail
 
+    std::cout << "\n--- Edge Case: Damage exceeding current HP ---" << std::endl;
+    ClapTrap edge("Edge");
+    edge.takeDamage(100);
+    std::cout << "HP after 100 damage to 10: " << edge.getHitPoints() << std::endl;
+
 	std::cout << "\n--- Copy & Assignment tests ---" << std::endl;
 	ClapTrap copy(clap);
 	unnamed = trap;

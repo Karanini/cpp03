@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:10:37 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/10 17:58:45 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/10 14:46:14 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ typedef ClapTrap CT;
 
 /**************OCF functions**************************/
 
-CT::ClapTrap() : _name("default"), _hit_points(0), _energy_points(0), _attack_damage(0)
+CT::ClapTrap() : _name("default"), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
@@ -59,7 +59,7 @@ no hit points or energy points left.
 */
 void CT::attack(const std::string &target)
 {
-	if (this->_hit_points <= 0 || this->_energy_points <= 0)
+	if (this->_hit_points == 0 || this->_energy_points == 0)
 		std::cout << "No hit points or energy points left! You can't attack my friend" << std::endl;
 	else
 	{
@@ -76,13 +76,22 @@ void CT::attack(const std::string &target)
 
 void CT::takeDamage(unsigned int amount)
 {
-	if (this->getHitPoints() <= 0)
-		std::cout << this->getName() << " is already dead, let him rest in peace!\n" << std::endl;
+	if (this->_hit_points == 0)
+		std::cout << this->_name << " is already dead, let him rest in peace!\n" << std::endl;
 	else
 	{
-		this->_hit_points -= amount;
-		std::cout << this->getName() << " is under attack ! It looses " << amount << " hit points." << std::endl;
-		std::cout << this->getName() << " has now " << this->getHitPoints() << " hit points.\n" << std::endl;
+		if (amount >= this->_hit_points)
+		{
+			std::cout << this->getName() << " is under attack ! It looses " << this->_hit_points << " hit points." << std::endl;
+			this->_hit_points = 0;
+			std::cout << this->getName() << " is dead!" << std::endl;
+		}
+		else
+		{
+			this->_hit_points -= amount;
+			std::cout << this->getName() << " is under attack ! It looses " << amount << " hit points." << std::endl;
+			std::cout << this->getName() << " has now " << this->getHitPoints() << " hit points.\n" << std::endl;
+		}
 	}
 }
 
@@ -94,13 +103,15 @@ energy points left.
 
 void CT::beRepaired(unsigned int amount)
 {
-	if (this->_hit_points <= 0 || this->_energy_points <= 0)
+	if (this->_hit_points == 0 || this->_energy_points == 0)
 		std::cout << "No hit points or energy points left! You can't be repaired my friend" << std::endl;
 	else
 	{
 		this->_hit_points += amount;
+		this->_energy_points--;
 		std::cout << "A professional ClapTrap fixer repairs " << this->getName() << ", which gains back " << amount << " hit points." << std::endl;
-		std::cout << this->getName() << " has now " << this->getHitPoints() << " hit points.\n" << std::endl;
+		std::cout << this->getName() << " has now " << this->getHitPoints() << " hit points." << std::endl;
+		std::cout << this->getName() << " has " << this->getEnergyPoints() << " energy points left.\n" << std::endl;
 	}
 }
 
@@ -116,32 +127,32 @@ void CT::setName(std::string name)
     this->_name = name;
 }
 
-int CT::getHitPoints(void) const
+unsigned int CT::getHitPoints(void) const
 {
     return (_hit_points);
 }
 
-void CT::setHitPoints(int hitPoints)
+void CT::setHitPoints(unsigned int hitPoints)
 {
     this->_hit_points = hitPoints;
 }
 
-int CT::getEnergyPoints(void) const
+unsigned int CT::getEnergyPoints(void) const
 {
     return (_energy_points);
 }
 
-void CT::setEnergyPoints(int energyPoints)
+void CT::setEnergyPoints(unsigned int energyPoints)
 {
     this->_energy_points = energyPoints;
 }
 
-int CT::getAttackDamage(void) const
+unsigned int CT::getAttackDamage(void) const
 {
     return (_attack_damage);
 }
 
-void CT::setAttackDamage(int attackDamage)
+void CT::setAttackDamage(unsigned int attackDamage)
 {
     this->_attack_damage = attackDamage;
 }

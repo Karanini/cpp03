@@ -20,9 +20,9 @@ class   ClapTrap
 {
 private:
     std::string _name;
-    int         _hit_points;
-    int         _energy_points;
-    int         _attack_damage;
+    unsigned int _hit_points;
+    unsigned int _energy_points;
+    unsigned int _attack_damage;
 public:
 	ClapTrap();
     ClapTrap(std::string name);
@@ -36,12 +36,12 @@ public:
 
     std::string getName(void) const;
     void        setName(std::string name);
-    int         getHitPoints(void) const;
-    void        setHitPoints(int hitPoints);
-    int         getEnergyPoints(void) const;
-    void        setEnergyPoints(int energyPoints);
-    int         getAttackDamage(void) const;
-    void        setAttackDamage(int attackDamage);
+    unsigned int getHitPoints(void) const;
+    void        setHitPoints(unsigned int hitPoints);
+    unsigned int getEnergyPoints(void) const;
+    void        setEnergyPoints(unsigned int energyPoints);
+    unsigned int getAttackDamage(void) const;
+    void        setAttackDamage(unsigned int attackDamage);
 };
 
 #endif
