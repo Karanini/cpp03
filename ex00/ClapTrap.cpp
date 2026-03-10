@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:10:37 by michel_32         #+#    #+#             */
-/*   Updated: 2026/03/10 16:34:52 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/03/10 16:41:22 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,18 +76,18 @@ void CT::attack(const std::string &target)
 
 void CT::takeDamage(unsigned int amount)
 {
-	if (this->_hit_points == 0)
-		std::cout << this->_name << " is already dead, let him rest in peace!\n" << std::endl;
+	if (this->getHitPoints() == 0)
+		std::cout << this->getName() << " is already dead, let him rest in peace!\n" << std::endl;
 	else
 	{
 		if (amount == 0)
 		{
-			std::cout << "ClapTrap " << this->_name << " takes no damage!" << std::endl;
+			std::cout << "ClapTrap " << this->getName() << " takes no damage!" << std::endl;
 			return;
 		}
-		if (amount >= this->_hit_points)
+		if (amount >= this->getHitPoints())
 		{
-			std::cout << this->getName() << " is under attack ! It looses " << this->_hit_points << " hit points." << std::endl;
+			std::cout << this->getName() << " is under attack ! It looses " << this->getHitPoints() << " hit points." << std::endl;
 			this->_hit_points = 0;
 			std::cout << this->getName() << " is dead!" << std::endl;
 		}
