@@ -6,7 +6,7 @@
 #    By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/16 14:08:56 by bkaras-g          #+#    #+#              #
-#    Updated: 2026/02/12 10:42:08 by bkaras-g         ###   ########.fr        #
+#    Updated: 2026/03/11 11:19:03 by bkaras-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,13 @@
 
 NAME = fraggy_trappy.exe
 
-SRC = ClapTrap.cpp \
-		ScavTrap.cpp \
+SRC = ../ex00/ClapTrap.cpp \
+		../ex01/ScavTrap.cpp \
 		FragTrap.cpp \
 		main.cpp
 
-HEADERS = ClapTrap.hpp \
-			ScavTrap.hpp \
+HEADERS = ../ex00/ClapTrap.hpp \
+			../ex01/ScavTrap.hpp \
 			FragTrap.hpp
 
 RM = rm -f

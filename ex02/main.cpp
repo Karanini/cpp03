@@ -6,11 +6,11 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 16:24:23 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/12 10:36:06 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/11 11:19:56 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "../ex01/ScavTrap.hpp"
 
 int main()
 {
