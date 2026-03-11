@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 13:01:19 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/03/11 11:42:21 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/11 12:01:13 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,12 @@ DiamondTrap    &DT::operator=(const DiamondTrap &trap)
 		this->_name = trap._name;
     }
     return (*this);
+}
+
+DT::DiamondTrap(const DiamondTrap &trap) : ClapTrap(trap), ScavTrap(trap), FragTrap(trap)
+{
+	std::cout << "DiamondTrap copy constructor called" << std::endl;
+	*this = trap;
 }
 
 DT::~DiamondTrap()
