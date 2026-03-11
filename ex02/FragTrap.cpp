@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 15:02:40 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/12 10:53:00 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/11 11:23:16 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ typedef		FragTrap FT;
 FT::FragTrap() : ClapTrap()
 {
 	std::cout << "FragTrap default constructor called" << std::endl;
+	this->_hit_points = 100;
+	this->_energy_points = 100;
+	this->_attack_damage = 30;
 }
 
 /*
@@ -27,10 +30,10 @@ FT::FragTrap() : ClapTrap()
 */
 FT::FragTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "FragTrap default constructor called." << std::endl;
-	this->setHitPoints(100);
-	this->setEnergyPoints(50);
-	this->setAttackDamage(20);
+	std::cout << "FragTrap " << name << " constructor called." << std::endl;
+	this->_hit_points = 100;
+	this->_energy_points = 100;
+	this->_attack_damage = 30;
 }
 
 /*
