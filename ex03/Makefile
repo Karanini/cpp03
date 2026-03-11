@@ -6,7 +6,7 @@
 #    By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/16 14:08:56 by bkaras-g          #+#    #+#              #
-#    Updated: 2026/02/13 14:49:08 by bkaras-g         ###   ########.fr        #
+#    Updated: 2026/03/11 11:35:53 by bkaras-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,13 @@
 
 NAME = shine_on_your_crazy_DiamondTrap.exe
 
-SRC = ClapTrap.cpp \
+SRC = ../ex00/ClapTrap.cpp \
 		ScavTrap.cpp \
 		FragTrap.cpp \
 		DiamondTrap.cpp \
 		main.cpp
 
-HEADERS = ClapTrap.hpp \
+HEADERS = ../ex00/ClapTrap.hpp \
 			ScavTrap.hpp \
 			FragTrap.hpp \
 			DiamondTrap.hpp

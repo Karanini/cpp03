@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 11:40:00 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/13 14:44:10 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/11 11:35:59 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <iostream>
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
-#include "ClapTrap.hpp"
+#include "../ex00/ClapTrap.hpp"
 
 class DiamondTrap : public ScavTrap, public FragTrap
 {

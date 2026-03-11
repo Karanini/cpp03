@@ -6,14 +6,14 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 18:04:30 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/13 16:11:05 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/11 11:36:30 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 #define SCAVTRAP_HPP
 
-#include "ClapTrap.hpp"
+#include "../ex00/ClapTrap.hpp"
 #include <string>
 #include <iostream>
 
